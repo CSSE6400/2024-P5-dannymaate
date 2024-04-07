@@ -1,11 +1,11 @@
 w5.txt
 
+Extension task? Attempt the kubernetes path 5.4 EKS / K8S
+
 P: See Section 3 Deploying a Database in AWS. Type says "t2.micro" should be "t4.micro"
 A: Update docs if you're bothered.
 
 Q: See Section 4 RDS Database with Terraform. Have I entered the locals fields correctly?
-
-Extension: Attempt the kubernetes path 5.4 EKS / K8S
 
 Q: Where can I find the public IP address?
 A: Elastic Container Service > Clusters > taskoverflow > Services > Tasks > 4490e1d29401439cbe024c8f697594a4 > Configuration 
@@ -14,5 +14,23 @@ Q: I found the public IP address. Why doesn't it load when I try the below?
 - 54.175.235.125
 - http://54.175.235.125
 - http://54.175.235.125/api/v1/health
-A: Try this format ... http://54.175.235.125:6400/api/v1/health. I believe for the assignment the port is 8080.
+A: Try this format ... http://54.175.235.125:6400/api/v1/health. I believe for the assignment the port is 8080. Hint try /todos
+
+Q: For section 6, should I use the existing prac06 repo, or use prac03 repo? 
+A: I used the existing prac06 repo.
+
+Q: What is the purpose of section 6?
+A: Previously we deployed a container on AWS using an existing hosted image. Now we want to develop our own image. Section 6 is about hosting this image using a combination of AWS ECR, Docker, and Terraform. It's a container registry like DockerHub or GitHub.
+
+Q: Where can I find the details for this?
+{ACCOUNT_ID}.dkr.ecr.{REGION}.amazonaws.com/{REPOSITORY_NAME}
+A: Easiest method is to deploy on Docker, then check the image name
+851725204964.dkr.ecr.us-east-1.amazonaws.com/taskoverflow:latest
+
+Q: What do I do after hosting TaskOverflow image?
+A: Use Docker to run the container from above image. After running container you should get a 'Listening at: http://0.0.0.0:6400'. Try this API on browser with /api/v1 
+
+
+
+
 
